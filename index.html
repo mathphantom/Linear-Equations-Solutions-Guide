@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Equations Solutions Guide</title>
+    <style>
+        :root {
+            --unique: #4CAF50;
+            --none: #F44336;
+            --infinite: #2196F3;
+            --dark: #333;
+            --light: #f9f9f9;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .genius-header {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            color: #FF5722;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        .author-header {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+            color: #000DFF;
+            font-style: italic;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .system {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .case {
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .case::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 100%;
+        }
+        .unique {
+            background-color: rgba(76, 175, 80, 0.1);
+            border-left: 8px solid var(--unique);
+        }
+        .none {
+            background-color: rgba(244, 67, 54, 0.1);
+            border-left: 8px solid var(--none);
+        }
+        .infinite {
+            background-color: rgba(33, 150, 243, 0.1);
+            border-left: 8px solid var(--infinite);
+        }
+        .case-title {
+            font-size: 1.4em;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .example {
+            background-color: rgba(255,255,255,0.7);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+        }
+        .checkmark {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            color: white;
+            text-align: center;
+            line-height: 20px;
+            margin-right: 10px;
+            font-size: 0.8em;
+        }
+        .unique .checkmark { background: var(--unique); }
+        .none .checkmark { background: var(--none); }
+        .infinite .checkmark { background: var(--infinite); }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .calculator {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 30px 0;
+        }
+        .input-group {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        input {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 60px;
+            text-align: center;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #777;
+            font-size: 0.9em;
+        }
+        .designer-credit {
+            font-weight: bold;
+            color: #000DFF;
+            margin-top: 10px;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+            .case {
+                padding: 15px;
+            }
+            .genius-header {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="genius-header">The Genius in Math</div>
+    <div class="author-header">Prepared by: Mr. Amr Moussa</div>
+
+    <header>
+        <h1>Linear Equations Solutions Guide</h1>
+        <p>Quickly determine how many solutions exist for a system of two equations</p>
+    </header>
+
+    <div class="system">
+        <strong>System of Equations:</strong><br>
+        a₁x + b₁y = c₁<br>
+        a₂x + b₂y = c₂
+    </div>
+
+    <!-- Rest of your content remains exactly the same -->
+    <h2>📊 Quick Check Method</h2>
+    <p>Compare these ratios to determine the number of solutions:</p>
+    <div style="text-align: center; font-size: 1.2em; margin: 20px 0;">
+        <span style="color: var(--unique)">a₁/a₂</span> 
+        vs 
+        <span style="color: var(--none)">b₁/b₂</span> 
+        vs 
+        <span style="color: var(--infinite)">c₁/c₂</span>
+    </div>
+
+    <div class="case unique">
+        <h3 class="case-title"><span class="checkmark">1</span> UNIQUE SOLUTION</h3>
+        <p><strong>Condition:</strong> a₁/a₂ ≠ b₁/b₂</p>
+        <p><strong>Meaning:</strong> Lines intersect at exactly one point</p>
+        <div class="example">
+            <strong>Example:</strong><br>
+            2x + 3y = 5<br>
+            4x - y = 1<br><br>
+            <strong>Check:</strong><br>
+            2/4 = 0.5 ≠ 3/-1 = -3 → <strong>One solution!</strong>
+        </div>
+    </div>
+
+    <div class="case none">
+        <h3 class="case-title"><span class="checkmark">0</span> NO SOLUTION</h3>
+        <p><strong>Condition:</strong> a₁/a₂ = b₁/b₂ ≠ c₁/c₂</p>
+        <p><strong>Meaning:</strong> Lines are parallel but distinct (never meet)</p>
+        <div class="example">
+            <strong>Example:</strong><br>
+            3x + 2y = 8<br>
+            6x + 4y = 10<br><br>
+            <strong>Check:</strong><br>
+            3/6 = 0.5 = 2/4 = 0.5 ≠ 8/10 = 0.8 → <strong>No solution!</strong>
+        </div>
+    </div>
+
+    <div class="case infinite">
+        <h3 class="case-title"><span class="checkmark">∞</span> INFINITE SOLUTIONS</h3>
+        <p><strong>Condition:</strong> a₁/a₂ = b₁/b₂ = c₁/c₂</p>
+        <p><strong>Meaning:</strong> Both equations represent the same line</p>
+        <div class="example">
+            <strong>Example:</strong><br>
+            x + 2y = 4<br>
+            2x + 4y = 8<br><br>
+            <strong>Check:</strong><br>
+            1/2 = 0.5 = 2/4 = 0.5 = 4/8 = 0.5 → <strong>∞ solutions!</strong>
+        </div>
+    </div>
+
+    <h2>⚠ Special Cases</h2>
+    <p>When coefficients are zero, use cross-multiplication instead of division:</p>
+    <div class="example">
+        <strong>Example:</strong><br>
+        0x + 2y = 4 → y = 2<br>
+        0x + 4y = 8 → y = 2<br><br>
+        <strong>Check:</strong> 2/4 = 4/8 → <strong>Same line (∞ solutions)</strong>
+    </div>
+
+    <h2>📌 Quick Reference Table</h2>
+    <table>
+        <tr>
+            <th>Case</th>
+            <th>Ratio Check</th>
+            <th>Solutions</th>
+        </tr>
+        <tr>
+            <td style="color: var(--unique)">Unique Solution</td>
+            <td>a₁/a₂ ≠ b₁/b₂</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td style="color: var(--none)">No Solution</td>
+            <td>a₁/a₂ = b₁/b₂ ≠ c₁/c₂</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td style="color: var(--infinite)">Infinite Solutions</td>
+            <td>a₁/a₂ = b₁/b₂ = c₁/c₂</td>
+            <td>∞</td>
+        </tr>
+    </table>
+
+    <div class="calculator">
+        <h2>🔢 Interactive Calculator</h2>
+        <p>Enter your equations to check the number of solutions:</p>
+        
+        <div class="input-group">
+            <input type="number" id="a1" placeholder="a₁"> x + 
+            <input type="number" id="b1" placeholder="b₁"> y = 
+            <input type="number" id="c1" placeholder="c₁">
+        </div>
+        <div class="input-group">
+            <input type="number" id="a2" placeholder="a₂"> x + 
+            <input type="number" id="b2" placeholder="b₂"> y = 
+            <input type="number" id="c2" placeholder="c₂">
+        </div>
+        
+        <button onclick="checkSolutions()">Check Solutions</button>
+        
+        <div id="result"></div>
+    </div>
+
+    <div class="footer">
+        <p>Math made simple! Use this guide to quickly analyze systems of linear equations.</p>
+        <div class="designer-credit">Designed by: Mr. Amr Moussa</div>
+    </div>
+
+    <script>
+        function checkSolutions() {
+            // Get input values
+            const a1 = parseFloat(document.getElementById('a1').value) || 0;
+            const b1 = parseFloat(document.getElementById('b1').value) || 0;
+            const c1 = parseFloat(document.getElementById('c1').value) || 0;
+            const a2 = parseFloat(document.getElementById('a2').value) || 0;
+            const b2 = parseFloat(document.getElementById('b2').value) || 0;
+            const c2 = parseFloat(document.getElementById('c2').value) || 0;
+            
+            // Avoid division by zero by using cross-multiplication
+            const cross1 = a1 * b2;
+            const cross2 = a2 * b1;
+            const cross3 = a1 * c2;
+            const cross4 = a2 * c1;
+            const cross5 = b1 * c2;
+            const cross6 = b2 * c1;
+            
+            const result = document.getElementById('result');
+            
+            // Determine the case
+            if (cross1 !== cross2) {
+                result.innerHTML = "✅ <strong>UNIQUE SOLUTION</strong><br>The equations intersect at one point.";
+                result.style.backgroundColor = "rgba(76, 175, 80, 0.2)";
+                result.style.borderLeft = "4px solid var(--unique)";
+            } 
+            else if (cross3 === cross4 && cross5 === cross6) {
+                result.innerHTML = "∞ <strong>INFINITE SOLUTIONS</strong><br>The equations represent the same line.";
+                result.style.backgroundColor = "rgba(33, 150, 243, 0.2)";
+                result.style.borderLeft = "4px solid var(--infinite)";
+            } 
+            else {
+                result.innerHTML = "❌ <strong>NO SOLUTION</strong><br>The lines are parallel and never meet.";
+                result.style.backgroundColor = "rgba(244, 67, 54, 0.2)";
+                result.style.borderLeft = "4px solid var(--none)";
+            }
+            
+            result.style.display = "block";
+        }
+    </script>
+</body>
+</html>

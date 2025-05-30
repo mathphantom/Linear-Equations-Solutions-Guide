@@ -13,109 +13,121 @@
             --dark: #333;
             --light: #f9f9f9;
         }
+        * {
+            box-sizing: border-box;
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--dark);
             max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px;
             background-color: #f5f5f5;
+            -webkit-text-size-adjust: 100%;
         }
         .genius-header {
             text-align: center;
-            margin-bottom: 10px;
-            font-size: 2.5em;
+            margin-bottom: 8px;
+            font-size: clamp(1.8em, 6vw, 2.5em);
             color: #FF5722;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            word-wrap: break-word;
         }
         .author-header {
             text-align: center;
-            margin-bottom: 30px;
-            font-size: 1.2em;
+            margin-bottom: 20px;
+            font-size: clamp(1em, 4vw, 1.2em);
             color: #000DFF;
             font-style: italic;
         }
         header {
             text-align: center;
-            margin-bottom: 30px;
-            padding: 20px;
+            margin-bottom: 20px;
+            padding: 15px;
             background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
             color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         h1 {
             margin: 0;
-            font-size: 2.2em;
+            font-size: clamp(1.5em, 5vw, 2.2em);
+        }
+        header p {
+            font-size: clamp(0.9em, 3.5vw, 1em);
+            margin: 10px 0 0;
         }
         h2 {
             color: #2c3e50;
             border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-            margin-top: 30px;
+            padding-bottom: 8px;
+            margin-top: 25px;
+            font-size: clamp(1.2em, 4.5vw, 1.5em);
         }
         .system {
             background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            margin: 20px 0;
+            padding: 12px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            margin: 15px 0;
             text-align: center;
-            font-size: 1.2em;
+            font-size: clamp(1em, 4vw, 1.2em);
         }
         .case {
-            border-radius: 10px;
-            padding: 20px;
-            margin: 25px 0;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
         }
         .case::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 8px;
+            width: 6px;
             height: 100%;
         }
         .unique {
             background-color: rgba(76, 175, 80, 0.1);
-            border-left: 8px solid var(--unique);
+            border-left: 6px solid var(--unique);
         }
         .none {
             background-color: rgba(244, 67, 54, 0.1);
-            border-left: 8px solid var(--none);
+            border-left: 6px solid var(--none);
         }
         .infinite {
             background-color: rgba(33, 150, 243, 0.1);
-            border-left: 8px solid var(--infinite);
+            border-left: 6px solid var(--infinite);
         }
         .case-title {
-            font-size: 1.4em;
+            font-size: clamp(1.1em, 4vw, 1.4em);
             margin-top: 0;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
         .example {
             background-color: rgba(255,255,255,0.7);
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 12px 0;
             font-family: 'Courier New', monospace;
+            font-size: clamp(0.85em, 3.5vw, 1em);
+            overflow-x: auto;
         }
         .checkmark {
             display: inline-block;
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             color: white;
             text-align: center;
-            line-height: 20px;
-            margin-right: 10px;
-            font-size: 0.8em;
+            line-height: 18px;
+            margin-right: 8px;
+            font-size: 0.75em;
         }
         .unique .checkmark { background: var(--unique); }
         .none .checkmark { background: var(--none); }
@@ -123,10 +135,11 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 25px 0;
+            margin: 20px 0;
+            font-size: clamp(0.85em, 3.5vw, 1em);
         }
         th, td {
-            padding: 12px;
+            padding: 10px 8px;
             text-align: left;
             border-bottom: 1px solid #ddd;
         }
@@ -135,78 +148,108 @@
         }
         .calculator {
             background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            margin: 30px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            margin: 25px 0;
         }
         .input-group {
             display: flex;
             align-items: center;
-            margin: 10px 0;
+            margin: 8px 0;
             flex-wrap: wrap;
-            gap: 5px;
+            gap: 4px;
+            font-size: clamp(0.9em, 4vw, 1em);
         }
         input {
-            padding: 8px;
+            padding: 6px;
             border: 1px solid #ddd;
-            border-radius: 4px;
-            width: 60px;
+            border-radius: 3px;
+            width: 50px;
             text-align: center;
+            font-size: clamp(0.9em, 4vw, 1em);
+            height: 35px;
         }
         button {
             background: #4CAF50;
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
+            padding: 8px 16px;
+            border-radius: 3px;
             cursor: pointer;
-            font-size: 1em;
-            margin-top: 15px;
+            font-size: clamp(0.9em, 4vw, 1em);
+            margin-top: 12px;
             transition: background 0.3s;
+            width: 100%;
         }
         button:hover {
             background: #45a049;
         }
         #result {
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 5px;
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 4px;
             font-weight: bold;
             display: none;
+            font-size: clamp(0.9em, 4vw, 1em);
         }
         .graph-container {
             width: 100%;
-            height: 300px;
-            margin: 20px 0;
+            height: 250px;
+            margin: 15px 0;
         }
         .footer {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 30px;
             color: #777;
-            font-size: 0.9em;
+            font-size: clamp(0.8em, 3.5vw, 0.9em);
         }
         .designer-credit {
             font-weight: bold;
             color: #000DFF;
-            margin-top: 10px;
+            margin-top: 8px;
         }
-        @media (max-width: 600px) {
+        
+        /* iPad landscape and larger screens */
+        @media (min-width: 768px) {
             body {
-                padding: 15px;
+                padding: 20px;
             }
-            .case {
-                padding: 15px;
+            .graph-container {
+                height: 300px;
             }
-            .genius-header {
-                font-size: 1.8em;
+            button {
+                width: auto;
+            }
+            input {
+                width: 60px;
+            }
+        }
+        
+        /* Desktop screens */
+        @media (min-width: 992px) {
+            .graph-container {
+                height: 350px;
+            }
+        }
+        
+        /* Very small mobile devices */
+        @media (max-width: 360px) {
+            input {
+                width: 40px;
+                height: 30px;
+                font-size: 0.8em;
+            }
+            .input-group {
+                font-size: 0.85em;
             }
         }
     </style>
 </head>
 <body>
     <div class="genius-header">The Genius in Math</div>
-    <div class="author-header">Prepared by: Mr. Amr Moussa - 01212266350 </div>
+    <div class="author-header">Prepared by: Mr. Amr Moussa</div>
+    <div class="author-header">01212266350</div>
 
     <header>
         <h1>Linear Equations Solutions Guide</h1>
@@ -221,7 +264,7 @@
 
     <h2>📊 Quick Check Method</h2>
     <p>Compare these ratios to determine the number of solutions:</p>
-    <div style="text-align: center; font-size: 1.2em; margin: 20px 0;">
+    <div style="text-align: center; font-size: 1.1em; margin: 15px 0;">
         <span style="color: var(--unique)">a₁/a₂</span> 
         vs 
         <span style="color: var(--none)">b₁/b₂</span> 
@@ -339,10 +382,65 @@
     </div>
 
     <script>
+        // Function to create responsive charts
+        function createResponsiveChart(canvasId, config) {
+            const ctx = document.getElementById(canvasId).getContext('2d');
+            return new Chart(ctx, {
+                ...config,
+                options: {
+                    ...config.options,
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        ...config.options.plugins,
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                boxWidth: 12,
+                                padding: 10,
+                                font: {
+                                    size: window.innerWidth < 768 ? 10 : 12
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ...config.options.scales?.x,
+                            ticks: {
+                                font: {
+                                    size: window.innerWidth < 768 ? 10 : 12
+                                }
+                            },
+                            title: {
+                                ...config.options.scales?.x?.title,
+                                font: {
+                                    size: window.innerWidth < 768 ? 11 : 13
+                                }
+                            }
+                        },
+                        y: {
+                            ...config.options.scales?.y,
+                            ticks: {
+                                font: {
+                                    size: window.innerWidth < 768 ? 10 : 12
+                                }
+                            },
+                            title: {
+                                ...config.options.scales?.y?.title,
+                                font: {
+                                    size: window.innerWidth < 768 ? 11 : 13
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
         // Predefined example charts
         function createUniqueChart() {
-            const ctx = document.getElementById('uniqueChart').getContext('2d');
-            return new Chart(ctx, {
+            const config = {
                 type: 'line',
                 data: {
                     labels: [-2, -1, 0, 1, 2, 3],
@@ -353,7 +451,8 @@
                             borderColor: '#4CAF50',
                             backgroundColor: 'rgba(76, 175, 80, 0.1)',
                             tension: 0.1,
-                            fill: false
+                            fill: false,
+                            borderWidth: 2
                         },
                         {
                             label: '4x - y = 1',
@@ -361,12 +460,12 @@
                             borderColor: '#2196F3',
                             backgroundColor: 'rgba(33, 150, 243, 0.1)',
                             tension: 0.1,
-                            fill: false
+                            fill: false,
+                            borderWidth: 2
                         }
                     ]
                 },
                 options: {
-                    responsive: true,
                     scales: {
                         x: {
                             title: {
@@ -386,7 +485,7 @@
                             display: true,
                             text: 'Unique Solution: Lines Intersect at One Point',
                             font: {
-                                size: 16
+                                size: 14
                             }
                         },
                         annotation: {
@@ -402,12 +501,12 @@
                         }
                     }
                 }
-            });
+            };
+            return createResponsiveChart('uniqueChart', config);
         }
 
         function createNoneChart() {
-            const ctx = document.getElementById('noneChart').getContext('2d');
-            return new Chart(ctx, {
+            const config = {
                 type: 'line',
                 data: {
                     labels: [-2, -1, 0, 1, 2, 3],
@@ -418,7 +517,8 @@
                             borderColor: '#F44336',
                             backgroundColor: 'rgba(244, 67, 54, 0.1)',
                             tension: 0.1,
-                            fill: false
+                            fill: false,
+                            borderWidth: 2
                         },
                         {
                             label: '6x + 4y = 10',
@@ -426,12 +526,12 @@
                             borderColor: '#FF9800',
                             backgroundColor: 'rgba(255, 152, 0, 0.1)',
                             tension: 0.1,
-                            fill: false
+                            fill: false,
+                            borderWidth: 2
                         }
                     ]
                 },
                 options: {
-                    responsive: true,
                     scales: {
                         x: {
                             title: {
@@ -451,17 +551,17 @@
                             display: true,
                             text: 'No Solution: Parallel Lines Never Meet',
                             font: {
-                                size: 16
+                                size: 14
                             }
                         }
                     }
                 }
-            });
+            };
+            return createResponsiveChart('noneChart', config);
         }
 
         function createInfiniteChart() {
-            const ctx = document.getElementById('infiniteChart').getContext('2d');
-            return new Chart(ctx, {
+            const config = {
                 type: 'line',
                 data: {
                     labels: [-2, -1, 0, 1, 2, 3],
@@ -472,12 +572,12 @@
                             borderColor: '#2196F3',
                             backgroundColor: 'rgba(33, 150, 243, 0.1)',
                             tension: 0.1,
-                            fill: false
+                            fill: false,
+                            borderWidth: 2
                         }
                     ]
                 },
                 options: {
-                    responsive: true,
                     scales: {
                         x: {
                             title: {
@@ -497,20 +597,14 @@
                             display: true,
                             text: 'Infinite Solutions: Both Equations Represent the Same Line',
                             font: {
-                                size: 16
+                                size: 14
                             }
                         }
                     }
                 }
-            });
+            };
+            return createResponsiveChart('infiniteChart', config);
         }
-
-        // Initialize example charts when page loads
-        window.onload = function() {
-            createUniqueChart();
-            createNoneChart();
-            createInfiniteChart();
-        };
 
         // Interactive calculator
         let interactiveChart = null;
@@ -555,7 +649,8 @@
                 borderColor: '#4CAF50',
                 backgroundColor: 'rgba(76, 175, 80, 0.1)',
                 tension: 0.1,
-                fill: false
+                fill: false,
+                borderWidth: 2
             };
             
             const dataset2 = {
@@ -564,7 +659,8 @@
                 borderColor: '#2196F3',
                 backgroundColor: 'rgba(33, 150, 243, 0.1)',
                 tension: 0.1,
-                fill: false
+                fill: false,
+                borderWidth: 2
             };
             
             // Determine the case
@@ -578,14 +674,13 @@
                 result.style.backgroundColor = "rgba(76, 175, 80, 0.2)";
                 result.style.borderLeft = "4px solid var(--unique)";
                 
-                interactiveChart = new Chart(ctx, {
+                const config = {
                     type: 'line',
                     data: {
                         labels: labels,
                         datasets: [dataset1, dataset2]
                     },
                     options: {
-                        responsive: true,
                         scales: {
                             x: { title: { display: true, text: 'x-axis' } },
                             y: { title: { display: true, text: 'y-axis' } }
@@ -594,7 +689,7 @@
                             title: {
                                 display: true,
                                 text: 'Unique Solution: Lines Intersect at One Point',
-                                font: { size: 16 }
+                                font: { size: 14 }
                             },
                             annotation: {
                                 annotations: {
@@ -609,7 +704,8 @@
                             }
                         }
                     }
-                });
+                };
+                interactiveChart = createResponsiveChart('interactiveChart', config);
             } 
             else if (cross3 === cross4 && cross5 === cross6) {
                 // Infinite solutions - same line
@@ -617,14 +713,13 @@
                 result.style.backgroundColor = "rgba(33, 150, 243, 0.2)";
                 result.style.borderLeft = "4px solid var(--infinite)";
                 
-                interactiveChart = new Chart(ctx, {
+                const config = {
                     type: 'line',
                     data: {
                         labels: labels,
                         datasets: [dataset1]
                     },
                     options: {
-                        responsive: true,
                         scales: {
                             x: { title: { display: true, text: 'x-axis' } },
                             y: { title: { display: true, text: 'y-axis' } }
@@ -633,11 +728,12 @@
                             title: {
                                 display: true,
                                 text: 'Infinite Solutions: Both Equations Represent the Same Line',
-                                font: { size: 16 }
+                                font: { size: 14 }
                             }
                         }
                     }
-                });
+                };
+                interactiveChart = createResponsiveChart('interactiveChart', config);
             } 
             else {
                 // No solution - parallel lines
@@ -645,14 +741,13 @@
                 result.style.backgroundColor = "rgba(244, 67, 54, 0.2)";
                 result.style.borderLeft = "4px solid var(--none)";
                 
-                interactiveChart = new Chart(ctx, {
+                const config = {
                     type: 'line',
                     data: {
                         labels: labels,
                         datasets: [dataset1, dataset2]
                     },
                     options: {
-                        responsive: true,
                         scales: {
                             x: { title: { display: true, text: 'x-axis' } },
                             y: { title: { display: true, text: 'y-axis' } }
@@ -661,23 +756,31 @@
                             title: {
                                 display: true,
                                 text: 'No Solution: Parallel Lines Never Meet',
-                                font: { size: 16 }
+                                font: { size: 14 }
                             }
                         }
                     }
-                });
+                };
+                interactiveChart = createResponsiveChart('interactiveChart', config);
             }
             
             result.style.display = "block";
         }
 
         // Initialize with default example
-        window.onload = function() {
+        window.addEventListener('load', function() {
             createUniqueChart();
             createNoneChart();
             createInfiniteChart();
             checkSolutions(); // Show default example in calculator
-        };
+        });
+
+        // Handle window resize for better mobile experience
+        window.addEventListener('resize', function() {
+            if (interactiveChart) {
+                interactiveChart.resize();
+            }
+        });
     </script>
 </body>
 </html>
